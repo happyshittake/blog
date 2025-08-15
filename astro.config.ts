@@ -16,12 +16,14 @@ import { imageConfig } from './src/utils/image-config'
 import path from 'path'
 import netlify from '@astrojs/netlify'
 
+import cloudflare from '@astrojs/cloudflare'
+
 export default defineConfig({
-  adapter: netlify(), // Set adapter for deployment, or set `linkCard` to `false` in `src/config.ts`
+  adapter: cloudflare(), // Set adapter for deployment, or set `linkCard` to `false` in `src/config.ts`
   site: themeConfig.site.website,
   i18n: {
-    locales: ["id", "en"],
-    defaultLocale: "id"
+    locales: ['id', 'en'],
+    defaultLocale: 'id'
   },
   image: {
     service: {
