@@ -151,7 +151,7 @@ async function generateFeedInstance(context: APIContext) {
       link: postUrl,
       content: cleanHtml,
       date: post.data.pubDate,
-      published: post.data.pubDate
+      published: post.data.pubDate,
     })
   }
 

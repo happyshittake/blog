@@ -2,7 +2,8 @@
 import { getEntry } from 'astro:content'
 import { render } from 'astro:content'
 
-const aboutEntry = await getEntry('about', 'about')
+const { locale = 'id' } = Astro.props;
+const aboutEntry = locale === 'id' ? await getEntry('about', 'about') : await getEntry('enAbout', 'about')
 // Check if there is actual content (excluding comments)
 const hasContent = aboutEntry?.body
   ? aboutEntry.body.replace(/<!--[\s\S]*?-->/g, '').trim().length > 0
